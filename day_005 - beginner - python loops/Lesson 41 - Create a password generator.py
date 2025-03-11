@@ -21,7 +21,7 @@ nr_symbols = int(input(f"How many symbols would you like?\n"))
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
 
 # Easy Level
-password = ""
+password = []                           # switched to list after watching given solution.
 for number in range(1,nr_letters+1):
     password += random.choice(letters)
 
@@ -87,8 +87,15 @@ for number in range(1, total+1):
             password_hard += random.choice(options[randpick])
             nr_choices[randpick] -= 1
         
+# print(password)
 print(password_hard)
+random.shuffle(password)    # added after watching solution 
+print(str(password))             # added after watching solution
 
 # I didn't WANT to do nested ifs, and I'm sure there's a much better option, but.. it works.
 # I struggled for a while with this, because I had "nr_choices < 0" instead of "nr_choices > 0".
 # *sigh*. Oh well, I figured it out.
+#
+# ...
+#
+# !@#$ ok, so saving it all (password) as a list, then doing random.shuffle(password), then print(password)
