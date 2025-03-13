@@ -40,6 +40,7 @@ chosen_word = random.choice(word_list)
 print(chosen_word)
 
 guess = input("Guess a letter: ").lower()
+print(guess)                    # to make sure lower case and stuff works fine.
 
 for letter in chosen_word:      # for whatever reason, when I tried this on my own, it threw errors, 
     if letter == guess:         # but now it does it fine. idk... this seems like obviously the 
