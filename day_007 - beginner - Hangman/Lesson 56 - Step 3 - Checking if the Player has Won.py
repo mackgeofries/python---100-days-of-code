@@ -43,8 +43,19 @@ for position in range(word_length):
 print(placeholder)
 guess = ""
 
+
 # TODO-1: - Use a while loop to let the user guess again.
 while len(guess) < 2:
+    underscore_count = len(chosen_word)
+
+    for letter in placeholder:
+        if not letter == "_":
+            underscore_count -= 1
+    
+    if underscore_count < 1:
+        print("\nYou Win! Congratulations!\n")
+        break
+
     guess = input("Guess a letter: ").lower()
     if len(guess) > 1:
         break
